@@ -5,6 +5,7 @@ import { DisplaySection } from "@/components/sections/DisplaySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HighlightSection } from "@/components/sections/HighlightSection";
 import { PerformanceSection } from "@/components/sections/PerformanceSection";
+import { SpecsSection } from "@/components/sections/SpecsSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <PerformanceSection />
       <DisplaySection />
       <BatterySection />
+      <SpecsSection />
       <Footer />
     </main>
   );
