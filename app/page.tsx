@@ -8,6 +8,7 @@ import { PerformanceSection } from "@/components/sections/PerformanceSection";
 import { ProductConfigurator } from "@/components/sections/ProductConfigurator";
 import { SpecsSection } from "@/components/sections/SpecsSection";
 import { NewsletterForm } from "@/components/sections/NewsletterForm";
+import { ChatbotWidget } from "@/components/sections/ChatbotWidget";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <ProductConfigurator />
       <NewsletterForm />
       <Footer />
+      <ChatbotWidget />
     </main>
   );
 }
