@@ -9,10 +9,12 @@ import { ProductConfigurator } from "@/components/sections/ProductConfigurator";
 import { SpecsSection } from "@/components/sections/SpecsSection";
 import { NewsletterForm } from "@/components/sections/NewsletterForm";
 import { ChatbotWidget } from "@/components/sections/ChatbotWidget";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f5f5f7] text-[#1d1d1f] dark:bg-black dark:text-white">
+      <ScrollProgress />
       <Navbar />
       <HeroSection />
       <HighlightSection />

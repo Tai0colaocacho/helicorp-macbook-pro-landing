@@ -1,6 +1,7 @@
 import { performanceFeatures } from "@/data/features";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function PerformanceSection() {
   return (
@@ -22,23 +23,25 @@ export function PerformanceSection() {
             const Icon = item.icon;
 
             return (
-              <Card key={item.title} className="min-h-64">
-                <div className="flex items-start gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-black text-white dark:bg-white dark:text-black">
-                    <Icon className="h-5 w-5" />
-                  </span>
+              <Reveal key={item.title} delay={0.05 * performanceFeatures.indexOf(item)} className="h-full">
+                <Card className="min-h-64">
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-black text-white dark:bg-white dark:text-black">
+                      <Icon className="h-5 w-5" />
+                    </span>
 
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-[#1d1d1f] dark:text-white">
-                      {item.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-xl font-semibold tracking-tight text-[#1d1d1f] dark:text-white">
+                        {item.title}
+                      </h3>
 
-                    <p className="mt-3 text-base leading-7 text-[#6e6e73] dark:text-neutral-400">
-                      {item.description}
-                    </p>
+                      <p className="mt-3 text-base leading-7 text-[#6e6e73] dark:text-neutral-400">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Reveal>
             );
           })}
         </div>

@@ -1,6 +1,7 @@
 import { BatteryCharging, Cpu, Layers, MonitorUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 
 const heroStats = [
   {
@@ -34,7 +35,7 @@ export function HeroSection() {
       <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(circle_at_top,#dbeafe_0%,transparent_45%),radial-gradient(circle_at_70%_20%,#ede9fe_0%,transparent_35%)] dark:bg-[radial-gradient(circle_at_top,#172554_0%,transparent_45%),radial-gradient(circle_at_70%_20%,#3b0764_0%,transparent_35%)]" />
 
       <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-14 py-16 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="text-center lg:text-left">
+        <Reveal className="text-center lg:text-left" y={18}>
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.32em] text-[#0071e3] dark:text-sky-400">
             MacBook Pro Landing Page
           </p>
@@ -69,7 +70,7 @@ export function HeroSection() {
               Tailwind CSS
             </span>
           </div>
-        </div>
+        </Reveal>
 
         <div className="relative mx-auto w-full max-w-3xl overflow-visible">
           <div className="absolute -left-10 -top-10 z-30 hidden md:block">
