@@ -1,5 +1,7 @@
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { BatterySection } from "@/components/sections/BatterySection";
+import { DisplaySection } from "@/components/sections/DisplaySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HighlightSection } from "@/components/sections/HighlightSection";
 import { PerformanceSection } from "@/components/sections/PerformanceSection";
@@ -11,6 +13,8 @@ export default function Home() {
       <HeroSection />
       <HighlightSection />
       <PerformanceSection />
+      <DisplaySection />
+      <BatterySection />
       <Footer />
     </main>
   );
