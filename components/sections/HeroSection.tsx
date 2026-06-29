@@ -71,8 +71,8 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-3xl">
-          <div className="absolute -left-4 top-12 hidden md:block">
+        <div className="relative mx-auto w-full max-w-3xl overflow-visible">
+          <div className="absolute -left-10 -top-10 z-30 hidden md:block">
             <FloatingCard
               label={heroStats[0].label}
               value={heroStats[0].value}
@@ -80,7 +80,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="absolute -right-2 top-24 hidden md:block">
+          <div className="absolute -right-30 top-20 z-30 hidden md:block">
             <FloatingCard
               label={heroStats[1].label}
               value={heroStats[1].value}
@@ -88,7 +88,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="absolute -bottom-3 left-12 hidden md:block">
+          <div className="absolute -bottom-8 -left-15 z-30 hidden md:block">
             <FloatingCard
               label={heroStats[2].label}
               value={heroStats[2].value}
@@ -96,7 +96,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="absolute bottom-14 right-0 hidden md:block">
+          <div className="absolute -bottom-14 -right-6 z-30 hidden md:block">
             <FloatingCard
               label={heroStats[3].label}
               value={heroStats[3].value}
@@ -104,7 +104,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="relative mx-auto">
+          <div className="relative z-10 mx-auto">
             <div className="mx-auto w-[92%] rounded-t-[2rem] border border-black/10 bg-neutral-900 p-2 shadow-[0_40px_120px_rgba(0,0,0,0.22)] dark:border-white/10">
               <div className="overflow-hidden rounded-t-[1.5rem] bg-black">
                 <div className="flex h-[260px] flex-col justify-between bg-[radial-gradient(circle_at_top_left,#60a5fa_0%,transparent_35%),radial-gradient(circle_at_bottom_right,#a855f7_0%,transparent_35%),linear-gradient(135deg,#0f172a,#020617)] p-6 md:h-[360px]">
