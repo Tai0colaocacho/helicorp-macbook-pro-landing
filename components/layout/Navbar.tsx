@@ -1,7 +1,8 @@
 "use client";
 
-import { Menu, Monitor, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, Monitor, Moon, Sun, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -57,19 +58,24 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <Button href="#contact" size="sm">
             Get Notified
           </Button>
         </div>
 
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          onClick={() => setIsOpen((current) => !current)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[#1d1d1f] backdrop-blur transition hover:bg-white md:hidden dark:border-white/10 dark:bg-white/10 dark:text-white"
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            onClick={() => setIsOpen((current) => !current)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[#1d1d1f] backdrop-blur transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       <div
@@ -98,5 +104,37 @@ export function Navbar() {
         </div>
       </div>
     </header>
+  );
+}
+
+function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        aria-label="Theme loading"
+        className="h-10 w-10 rounded-full border border-black/10 bg-white/70 dark:border-white/10 dark:bg-white/10"
+      />
+    );
+  }
+
+  const isDark = resolvedTheme === "dark";
+
+  return (
+    <button
+      type="button"
+      aria-label="Toggle dark mode"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[#1d1d1f] backdrop-blur transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
+    >
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
   );
 }
