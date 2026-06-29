@@ -7,6 +7,7 @@ import { HighlightSection } from "@/components/sections/HighlightSection";
 import { PerformanceSection } from "@/components/sections/PerformanceSection";
 import { ProductConfigurator } from "@/components/sections/ProductConfigurator";
 import { SpecsSection } from "@/components/sections/SpecsSection";
+import { NewsletterForm } from "@/components/sections/NewsletterForm";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <BatterySection />
       <SpecsSection />
       <ProductConfigurator />
+      <NewsletterForm />
       <Footer />
     </main>
   );
