@@ -10,6 +10,7 @@ import { SpecsSection } from "@/components/sections/SpecsSection";
 import { NewsletterForm } from "@/components/sections/NewsletterForm";
 import { ChatbotWidget } from "@/components/sections/ChatbotWidget";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { MacBook3DShowcase } from "@/components/sections/MacBook3DShowcase";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <HeroSection />
+      <MacBook3DShowcase />
       <HighlightSection />
       <PerformanceSection />
       <DisplaySection />

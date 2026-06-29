@@ -12,6 +12,10 @@ const navItems = [
     href: "#overview",
   },
   {
+    label: "Interactive 3D",
+    href: "#interactive-3d",
+  },
+  {
     label: "Performance",
     href: "#performance",
   },
