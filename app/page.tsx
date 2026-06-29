@@ -5,6 +5,7 @@ import { DisplaySection } from "@/components/sections/DisplaySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { HighlightSection } from "@/components/sections/HighlightSection";
 import { PerformanceSection } from "@/components/sections/PerformanceSection";
+import { ProductConfigurator } from "@/components/sections/ProductConfigurator";
 import { SpecsSection } from "@/components/sections/SpecsSection";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <DisplaySection />
       <BatterySection />
       <SpecsSection />
+      <ProductConfigurator />
       <Footer />
     </main>
   );
