@@ -59,7 +59,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm text-[#6e6e73] lg:justify-start dark:text-neutral-400">
+          {/* <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm text-[#6e6e73] lg:justify-start dark:text-neutral-400">
             <span className="rounded-full border border-black/10 bg-white/60 px-4 py-2 backdrop-blur dark:border-white/10 dark:bg-white/10">
               Next.js
             </span>
@@ -69,7 +69,7 @@ export function HeroSection() {
             <span className="rounded-full border border-black/10 bg-white/60 px-4 py-2 backdrop-blur dark:border-white/10 dark:bg-white/10">
               Tailwind CSS
             </span>
-          </div>
+          </div> */}
         </Reveal>
 
         <div className="relative mx-auto w-full max-w-3xl overflow-visible">
