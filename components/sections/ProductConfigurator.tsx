@@ -123,11 +123,11 @@ export function ProductConfigurator() {
 
   function addToCart() {
     const nextProduct = {
-  ...configuredProduct,
-  createdAt: new Date().toISOString(),
-};
+      ...configuredProduct,
+      createdAt: new Date().toISOString(),
+    };
 
-const nextCart = [nextProduct, ...cart];
+    const nextCart = [nextProduct, ...cart];
 
     setCart(nextCart);
     setStoredValue(CART_KEY, nextCart);
@@ -157,7 +157,7 @@ const nextCart = [nextProduct, ...cart];
                     <Laptop className="h-5 w-5" />
                   </span>
 
-                  <span className="rounded-full bg-white/10 px-4 py-2 text-sm text-white/70">
+                  <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90">
                     {selectedColor?.name}
                   </span>
                 </div>
@@ -172,13 +172,13 @@ const nextCart = [nextProduct, ...cart];
                           <span className="h-3 w-3 rounded-full bg-green-400" />
                         </div>
 
-                        <span className="text-xs text-white/50">
+                        <span className="text-xs font-medium text-white/80">
                           Configured
                         </span>
                       </div>
 
                       <div>
-                        <p className="text-sm text-white/50">
+                        <p className="text-sm font-medium text-white/80">
                           Selected model
                         </p>
                         <h3 className="mt-2 text-3xl font-semibold">
@@ -339,13 +339,13 @@ const nextCart = [nextProduct, ...cart];
                         {item.chip.toUpperCase()} · {item.memory.toUpperCase()} ·{" "}
                         {item.storage.toUpperCase()}
                       </span>
-                      <span className="font-medium text-[#6e6e73] dark:text-neutral-400">
+                      <span className="font-semibold text-[#424245] dark:text-neutral-100">
                         {formatUsd(item.price)}
                       </span>
                     </div>
                   ))
                 ) : (
-                  <p className="text-sm text-[#6e6e73] dark:text-neutral-400">
+                  <p className="text-sm text-[#424245] dark:text-neutral-200">
                     No viewed configurations yet.
                   </p>
                 )}
@@ -407,7 +407,7 @@ function ConfigOption({
           </p>
 
           {description ? (
-            <p className="mt-2 text-sm leading-6 text-[#6e6e73] dark:text-neutral-400">
+            <p className="mt-2 text-sm leading-6 text-[#424245] dark:text-neutral-200">
               {description}
             </p>
           ) : null}
@@ -416,7 +416,7 @@ function ConfigOption({
         {isActive ? <Check className="h-5 w-5 text-[#0071e3]" /> : null}
       </div>
 
-      <p className="mt-3 text-sm font-medium text-[#6e6e73] dark:text-neutral-400">
+      <p className="mt-3 text-sm font-semibold text-[#424245] dark:text-neutral-200">
         {price > 0 ? `+$${price}` : "Included"}
       </p>
     </button>
@@ -431,7 +431,7 @@ type SummaryItemProps = {
 function SummaryItem({ label, value }: SummaryItemProps) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-      <p className="text-xs uppercase tracking-[0.2em] text-white/45">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
         {label}
       </p>
       <p className="mt-2 font-semibold text-white">{value}</p>
@@ -450,7 +450,7 @@ function CommerceStat({ label, value }: CommerceStatProps) {
       <p className="text-2xl font-semibold text-[#1d1d1f] dark:text-white">
         {value}
       </p>
-      <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#6e6e73] dark:text-neutral-500">
+      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#424245] dark:text-neutral-200">
         {label}
       </p>
     </div>

@@ -44,7 +44,7 @@ export function HeroSection() {
             Built for those who build everything.
           </h1>
 
-          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-[#6e6e73] md:text-xl lg:mx-0 dark:text-neutral-400">
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-[#424245] md:text-xl lg:mx-0 dark:text-neutral-300">
             Supercharged performance. Stunning display. All-day battery life.
             Designed for creators, developers and professionals.
           </p>
@@ -116,16 +116,16 @@ export function HeroSection() {
                       <span className="h-3 w-3 rounded-full bg-green-400" />
                     </div>
 
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 backdrop-blur">
+                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/85 backdrop-blur">
                       Pro workflow
                     </span>
                   </div>
 
                   <div>
-                    <p className="text-sm text-white/60">Today&apos;s focus</p>
-                    <h3 className="mt-2 max-w-sm text-3xl font-semibold tracking-tight text-white md:text-5xl">
+                    <p className="text-sm font-medium text-white/80">Today&apos;s focus</p>
+                    <p className="mt-2 max-w-sm text-3xl font-semibold tracking-tight text-white md:text-5xl">
                       Build. Test. Ship.
-                    </h3>
+                    </p>
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-3">
@@ -172,7 +172,7 @@ function FloatingCard({ label, value, icon: Icon }: FloatingCardProps) {
         </span>
 
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#6e6e73] dark:text-neutral-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#424245] dark:text-neutral-300">
             {label}
           </p>
           <p className="mt-1 text-sm font-semibold text-[#1d1d1f] dark:text-white">
@@ -192,7 +192,7 @@ type MiniScreenCardProps = {
 function MiniScreenCard({ title, value }: MiniScreenCardProps) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
-      <p className="text-xs uppercase tracking-[0.2em] text-white/50">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
         {title}
       </p>
       <p className="mt-2 text-lg font-semibold text-white">{value}</p>
