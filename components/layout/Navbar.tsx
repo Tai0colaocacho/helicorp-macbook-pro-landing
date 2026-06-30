@@ -12,7 +12,7 @@ const navItems = [
     href: "#overview",
   },
   {
-    label: "Interactive 3D",
+    label: "3D",
     href: "#interactive-3d",
   },
   {
@@ -41,9 +41,13 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-black/5 bg-[#f5f5f7]/80 backdrop-blur-2xl dark:border-white/10 dark:bg-black/70">
+    <header className="fixed left-0 right-0 top-0 z-[80] border-b border-black/5 bg-[#f5f5f7]/80 backdrop-blur-2xl dark:border-white/10 dark:bg-black/70">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-2">
+        <a
+          href="#overview"
+          onClick={() => setIsOpen(false)}
+          className="flex items-center gap-2"
+        >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white dark:bg-white dark:text-black">
             <Monitor className="h-4 w-4" />
           </span>
@@ -53,7 +57,7 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -77,7 +81,8 @@ export function Navbar() {
 
           <button
             type="button"
-            aria-label="Toggle menu"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isOpen}
             onClick={() => setIsOpen((current) => !current)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/70 text-[#1d1d1f] backdrop-blur transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-white"
           >
@@ -88,27 +93,32 @@ export function Navbar() {
 
       <div
         className={cn(
-          "grid overflow-hidden border-t border-black/5 bg-[#f5f5f7]/95 px-6 transition-all duration-300 md:hidden dark:border-white/10 dark:bg-black/95",
-          isOpen ? "grid-rows-[1fr] py-4" : "grid-rows-[0fr] py-0"
+          "fixed left-0 right-0 top-16 z-[75] border-t border-black/5 bg-[#f5f5f7]/95 px-6 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition-all duration-300 md:hidden dark:border-white/10 dark:bg-black/95",
+          "max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain",
+          isOpen
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-3 opacity-0"
         )}
       >
-        <div className="min-h-0">
-          <div className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-2xl px-4 py-3 text-sm font-medium text-[#1d1d1f] transition hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
-              >
-                {item.label}
-              </a>
-            ))}
+        <div className="mx-auto flex max-w-7xl flex-col gap-2">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="rounded-2xl px-4 py-3 text-sm font-medium text-[#1d1d1f] transition hover:bg-black/5 dark:text-white dark:hover:bg-white/10"
+            >
+              {item.label}
+            </a>
+          ))}
 
-            <Button href="#contact" className="mt-3 w-full">
-              Get Notified
-            </Button>
-          </div>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="mt-3 inline-flex h-11 items-center justify-center rounded-full bg-[#0071e3] px-5 text-sm font-semibold text-white transition hover:bg-[#0077ed]"
+          >
+            Get Notified
+          </a>
         </div>
       </div>
     </header>

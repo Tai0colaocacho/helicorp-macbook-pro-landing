@@ -24,3 +24,7 @@ body {
 a {
   text-decoration: none;
 }
+
+section {
+  scroll-margin-top: 88px;
+}
