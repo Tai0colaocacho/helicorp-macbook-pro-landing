@@ -12,6 +12,12 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
+const selectClassName =
+  "mt-2 h-12 w-full rounded-2xl border border-black/10 bg-white px-4 text-sm font-medium text-[#1d1d1f] outline-none transition focus:border-[#0071e3] focus:ring-4 focus:ring-[#0071e3]/10 dark:border-white/10 dark:bg-neutral-900 dark:text-white";
+
+const optionClassName =
+  "bg-white text-[#1d1d1f] dark:bg-neutral-950 dark:text-white";
+
 export function NewsletterForm() {
   const {
     register,
@@ -142,12 +148,20 @@ export function NewsletterForm() {
                   <select
                     id="purpose"
                     {...register("purpose")}
-                    className="mt-2 h-12 w-full rounded-2xl border border-black/10 bg-white px-4 text-sm text-[#1d1d1f] outline-none transition focus:border-[#0071e3] focus:ring-4 focus:ring-[#0071e3]/10 dark:border-white/10 dark:bg-white/10 dark:text-white"
+                    className={selectClassName}
                   >
-                    <option value="student">Student</option>
-                    <option value="developer">Developer</option>
-                    <option value="designer">Designer</option>
-                    <option value="business">Business</option>
+                    <option value="student" className={optionClassName}>
+                      Student
+                    </option>
+                    <option value="developer" className={optionClassName}>
+                      Developer
+                    </option>
+                    <option value="designer" className={optionClassName}>
+                      Designer
+                    </option>
+                    <option value="business" className={optionClassName}>
+                      Business
+                    </option>
                   </select>
                   {errors.purpose ? (
                     <p className="mt-2 text-sm text-red-500">
@@ -166,13 +180,21 @@ export function NewsletterForm() {
                   <select
                     id="preferredModel"
                     {...register("preferredModel")}
-                    className="mt-2 h-12 w-full rounded-2xl border border-black/10 bg-white px-4 text-sm text-[#1d1d1f] outline-none transition focus:border-[#0071e3] focus:ring-4 focus:ring-[#0071e3]/10 dark:border-white/10 dark:bg-white/10 dark:text-white"
+                    className={selectClassName}
                   >
-                    <option value="macbook-pro-m5">MacBook Pro M5</option>
-                    <option value="macbook-pro-m5-pro">
+                    <option value="macbook-pro-m5" className={optionClassName}>
+                      MacBook Pro M5
+                    </option>
+                    <option
+                      value="macbook-pro-m5-pro"
+                      className={optionClassName}
+                    >
                       MacBook Pro M5 Pro
                     </option>
-                    <option value="macbook-pro-m5-max">
+                    <option
+                      value="macbook-pro-m5-max"
+                      className={optionClassName}
+                    >
                       MacBook Pro M5 Max
                     </option>
                   </select>
