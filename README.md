@@ -78,7 +78,7 @@ Two `.glb` files are served from `/public/models/` — each approximately 10 MB 
 | **User-gated loading** | Models are not fetched on page load. A gated UI prompt lets the user opt in, at which point `MacBook3DCanvas` mounts and the `.glb` is streamed |
 | **Theme-driven model selection** | Only one model is ever loaded per session. Dark mode → `macbook-pro-14-black.glb`; light mode → `macbook-pro-16-silver.glb`. Switching themes swaps the model via `key` prop, triggering a clean remount |
 | **`useGLTF` caching** | `@react-three/drei`'s `useGLTF` hook caches the parsed model in memory. If the user re-opens the 3D viewer, no second network request is made |
-| **Draco / compression** (recommended) | For production, models should be compressed using `gltf-pipeline` with Draco geometry compression to reduce file size by 60–80% before deployment |
+| **Future improvement: Draco / compression** | For production, models should be compressed using `gltf-pipeline` with Draco geometry compression to reduce file size by 60–80% before deployment |
 | **Desktop-only rendering** | A `window.matchMedia('(min-width: 768px)')` guard prevents Three.js from ever loading on mobile, protecting Core Web Vitals on the device class most likely to have slower connections |
 | **Suspense loading state** | While the model streams in, a spinner fallback is shown inside a `<Suspense>` boundary so the rest of the page remains interactive |
 
@@ -108,7 +108,7 @@ NEXT_PUBLIC_SITE_URL=https://your-production-domain.com
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/macbook-pro-landing.git
+git clone https://github.com/Tai0colaocacho/helicorp-macbook-pro-landing.git
 cd macbook-pro-landing
 
 # 2. Install dependencies
@@ -139,23 +139,38 @@ npm run lint
 
 ## Deployment
 
-> 🔗 **Live Demo:** _[Deployment link placeholder — add after deploying to Vercel / Netlify]_
+> 🔗 **Live Demo:** https://helicorp-macbook-pro-landing.vercel.app
 
-The recommended deployment target is **Vercel** (zero-config with Next.js):
+The project is deployed on **Vercel** using the `main` branch as the production branch.
 
-1. Push the repository to GitHub
-2. Import the project in [vercel.com/new](https://vercel.com/new)
-3. Add `WEBHOOK_URL` and `NEXT_PUBLIC_SITE_URL` in **Project Settings → Environment Variables**
-4. Deploy — Vercel will run `npm run build` automatically
+Deployment checklist:
+
+- GitHub repository is public
+- Production deployment is live on Vercel
+- `WEBHOOK_URL` is configured as a server-side environment variable
+- `NEXT_PUBLIC_SITE_URL` is configured for absolute metadata URLs
+- `robots.txt`, `sitemap.xml`, and Open Graph image are available in production
 
 ---
 
 ## PageSpeed / Lighthouse Score
 
-> 📸 _[Add a PageSpeed Insights screenshot here after deployment]_
+> 📸 Google PageSpeed Insights results after production deployment:
 
-Paste your PageSpeed Insights URL:
-`https://pagespeed.web.dev/report?url=https://your-production-domain.com`
+| Device | Performance | Accessibility | Best Practices | SEO |
+|---|---:|---:|---:|---:|
+| Mobile | 94 | 100 | 100 | 100 |
+| Desktop | 100 | 100 | 100 | 100 |
+
+The project satisfies the required Mobile PageSpeed score of **85+**.
+
+PageSpeed evidence is included in the submission screenshots.
+
+Mobile PageSpeed Insights URL:
+https://pagespeed.web.dev/analysis/https-helicorp-macbook-pro-landing-vercel-app/hoef4ruhph?form_factor=mobile
+
+Desktop PageSpeed Insights URL:
+https://pagespeed.web.dev/analysis/https-helicorp-macbook-pro-landing-vercel-app/hoef4ruhph?form_factor=desktop
 
 ---
 
