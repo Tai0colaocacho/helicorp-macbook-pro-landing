@@ -180,7 +180,11 @@ export function ChatbotWidget() {
         aria-label="Open chatbot"
         className="ml-auto flex h-14 w-14 items-center justify-center rounded-full bg-black text-white shadow-[0_20px_60px_rgba(0,0,0,0.25)] transition hover:scale-105 dark:bg-white dark:text-black"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {isOpen ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <MessageCircle className="h-6 w-6" />
+        )}
       </button>
     </div>
   );

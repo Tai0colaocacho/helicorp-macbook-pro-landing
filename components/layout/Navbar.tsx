@@ -28,6 +28,10 @@ const navItems = [
     href: "#specs",
   },
   {
+    label: "Build Yours",
+    href: "#configurator",
+  },
+  {
     label: "Contact",
     href: "#contact",
   },
